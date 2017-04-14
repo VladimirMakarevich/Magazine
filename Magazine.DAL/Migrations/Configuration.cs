@@ -18,14 +18,14 @@
         {
             var store = new List<Store>
             {
-                new Store { Address = "LughtPoint, 220113, Belarus, Minsk city,  5-1 Melezha str., Apt. 306", StartWorkTime = "11.00 A.M.", EndWorkTime = "00.00 A.M." },
-                new Store { Address = "EPAM, 1/1 Academician Kuprevich Street, Suite 110, 220141 Minsk Belarus", StartWorkTime = "8.30 A.M.", EndWorkTime = "20.00 P.M." },
-                new Store { Address = "HTP, Kuprevicha, 1/1, 220141, Minsk, Belarus.", StartWorkTime = "9.30 A.M.", EndWorkTime = "22.30 P.M." },
-                new Store { Address = "Itransition, street Kuĺman 1, Minsk 220013, Belarus", StartWorkTime = "10.00 A.M.", EndWorkTime = "21.00 P.M." },
-                new Store { Address = "Wargaming, Partizansky Ave. 178/2, Minsk", StartWorkTime = "7.00 A.M.", EndWorkTime = "23.00 P.M." },
-                new Store { Address = "Scand Ltd. 8b/1-520 Fabritsiusa str., 220007 Minsk, Belarus", StartWorkTime = "8.00 A.M.", EndWorkTime = "18.00 P.M." },
-                new Store { Address = "exp(capital), 36 Internacyjanalnaya str. 6th floor, Minsk 220022, Belarus", StartWorkTime = "6.00 A.M.", EndWorkTime = "17.00 P.M." },
-                new Store { Address = "WorkFusion, 48 Wall Street, 7th floor New York NY 10005 ", StartWorkTime = "7.30 A.M.", EndWorkTime = "20.30 P.M." }
+                new Store { Name = "LughtPoint", Address = "220113, Belarus, Minsk city,  5-1 Melezha str., Apt. 306", StartWorkTime = "11.00 A.M.", EndWorkTime = "00.00 A.M." },
+                new Store { Name = "EPAM", Address = "1/1 Academician Kuprevich Street, Suite 110, 220141 Minsk Belarus", StartWorkTime = "8.30 A.M.", EndWorkTime = "20.00 P.M." },
+                new Store { Name = "HTP", Address = "Kuprevicha, 1/1, 220141, Minsk, Belarus.", StartWorkTime = "9.30 A.M.", EndWorkTime = "22.30 P.M." },
+                new Store { Name = "Itransition", Address = "Street Kuĺman 1, Minsk 220013, Belarus", StartWorkTime = "10.00 A.M.", EndWorkTime = "21.00 P.M." },
+                new Store { Name = "Wargaming", Address = "Partizansky Ave. 178/2, Minsk", StartWorkTime = "7.00 A.M.", EndWorkTime = "23.00 P.M." },
+                new Store { Name = "Scand Ltd.", Address = "8b/1-520 Fabritsiusa str., 220007 Minsk, Belarus", StartWorkTime = "8.00 A.M.", EndWorkTime = "18.00 P.M." },
+                new Store { Name = "exp(capital)", Address = "36 Internacyjanalnaya str. 6th floor, Minsk 220022, Belarus", StartWorkTime = "6.00 A.M.", EndWorkTime = "17.00 P.M." },
+                new Store { Name = "WorkFusion", Address = "48 Wall Street, 7th floor New York NY 10005 ", StartWorkTime = "7.30 A.M.", EndWorkTime = "20.30 P.M." }
             };
             store.ForEach(s => context.Stores.Add(s));
             context.SaveChanges();

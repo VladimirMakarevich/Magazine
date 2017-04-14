@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201704141654339_added-explicitly-key-for-entities.Designer.cs">
       <DependentUpon>201704141654339_added-explicitly-key-for-entities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704141805158_added-name-for-store-entity.cs" />
+    <Compile Include="Migrations\201704141805158_added-name-for-store-entity.Designer.cs">
+      <DependentUpon>201704141805158_added-name-for-store-entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704141654339_added-explicitly-key-for-entities.resx">
       <DependentUpon>201704141654339_added-explicitly-key-for-entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704141805158_added-name-for-store-entity.resx">
+      <DependentUpon>201704141805158_added-name-for-store-entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

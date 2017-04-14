@@ -16,7 +16,7 @@ namespace Magazine.DAL.Context
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        public DbSet<Item> Merchandises { get; set; }
-        public DbSet<Store> Magazines { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Store> Stores { get; set; }
     }
 }

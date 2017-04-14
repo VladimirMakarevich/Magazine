@@ -52,10 +52,32 @@
     <Compile Include="Context\MagazineContext.cs" />
     <Compile Include="Entities\Store.cs" />
     <Compile Include="Entities\Item.cs" />
+    <Compile Include="Migrations\201704141644429_changed-store-entity.cs" />
+    <Compile Include="Migrations\201704141644429_changed-store-entity.Designer.cs">
+      <DependentUpon>201704141644429_changed-store-entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704141651338_added-dependencies-for-entities.cs" />
+    <Compile Include="Migrations\201704141651338_added-dependencies-for-entities.Designer.cs">
+      <DependentUpon>201704141651338_added-dependencies-for-entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704141654339_added-explicitly-key-for-entities.cs" />
+    <Compile Include="Migrations\201704141654339_added-explicitly-key-for-entities.Designer.cs">
+      <DependentUpon>201704141654339_added-explicitly-key-for-entities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704141644429_changed-store-entity.resx">
+      <DependentUpon>201704141644429_changed-store-entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704141651338_added-dependencies-for-entities.resx">
+      <DependentUpon>201704141651338_added-dependencies-for-entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704141654339_added-explicitly-key-for-entities.resx">
+      <DependentUpon>201704141654339_added-explicitly-key-for-entities.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

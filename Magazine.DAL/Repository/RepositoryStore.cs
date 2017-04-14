@@ -1,5 +1,6 @@
 ﻿using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
+using Magazine.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Magazine.DAL.Repository
 {
-    class RepositoryStore : IRepository<Store>
+    public class RepositoryStore : IRepository<Store>
     {
         private MagazineContext _db;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magazine.DAL.Repository
+namespace Magazine.DAL.Repository.Interfaces
 {
     interface IRepository<T> where T : class
     {

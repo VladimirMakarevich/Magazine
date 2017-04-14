@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Magazine.DAL.Context
 {
-    class MagazineContext : DbContext
+    public class MagazineContext : DbContext
     {
         public MagazineContext() : base("name=MagazineDb")
         {

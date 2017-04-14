@@ -6,7 +6,7 @@ namespace Magazine.DAL.Context
 {
     class MagazineContext : DbContext
     {
-        public MagazineContext() : base("name=MagazineDbContext")
+        public MagazineContext() : base("name=MagazineDb")
         {
 
         }

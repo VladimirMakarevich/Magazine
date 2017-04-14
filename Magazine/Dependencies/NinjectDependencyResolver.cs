@@ -1,4 +1,5 @@
-﻿using Magazine.BL.UnityOfWork;
+﻿using AutoMapper;
+using Magazine.BL.UnityOfWork;
 using Magazine.Mappers;
 using Ninject;
 using System;
@@ -34,6 +35,9 @@ namespace Magazine.Dependencies
 
             // repository binding
             //TODO:
+
+            // AutoMapperConfiguration binding
+            _kernel.Bind<IMapper>().ToMethod(AutoMapperConfig.GetMapper).InSingletonScope();
 
             // Identity
             //TODO:

@@ -17,9 +17,15 @@ namespace Magazine.Mappers
             _mapper = mapper;
         }
 
-        public IEnumerable<StoreViewModel> ToStoreViewModel(IEnumerable<Store> store)
+        public IEnumerable<StoreViewModel> ToListStoreViewModel(IEnumerable<Store> store)
         {
-            return _mapper.Map<IEnumerable<Store>, IEnumerable<StoreViewModel>>(store);
+            var storeListViewModel = store.Select(ToStoreViewModel).ToList();
+            return storeListViewModel;
+        }
+
+        public StoreViewModel ToStoreViewModel(Store store)
+        {
+            return _mapper.Map<Store, StoreViewModel>(store);
         }
     }
 }

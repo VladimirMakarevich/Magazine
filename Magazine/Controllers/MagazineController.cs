@@ -21,7 +21,8 @@ namespace Magazine.Controllers
         public ActionResult Index()
         {
             var store = _unityOfWork.Stores.GetAll();
-            var storeViewModel = _storeMapper.ToStoreViewModel(store);
+            var storeViewModel = _storeMapper.ToListStoreViewModel(store);
+
             return View(storeViewModel);
         }
 

@@ -1,9 +1,18 @@
-﻿@model Magazine.Models.StoreViewModel
+﻿@model IEnumerable<Magazine.Models.StoreViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Magazine";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <p>@item.Address</p>
+        <p>@item.StartWorkTime - @item.EndWorkTime</p>
+        <p>@item.Name</p>
+        <hr />
+    }
+</div>
 

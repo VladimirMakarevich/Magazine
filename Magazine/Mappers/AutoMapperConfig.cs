@@ -2,6 +2,7 @@
 using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
 using Magazine.Models;
+using Ninject.Activation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Magazine.Mappers
 {
     public class AutoMapperConfig
     {
-        public static IMapper GetMapper(MagazineContext context)
+        public static IMapper GetMapper(IContext context)
         {
             MapperConfiguration config = new MapperConfiguration(RegisterMappings);
             IMapper mapper = config.CreateMapper();
@@ -20,7 +21,7 @@ namespace Magazine.Mappers
 
         private static void RegisterMappings(IMapperConfigurationExpression config)
         {
-            config.CreateMap<IEnumerable<StoreViewModel>, IEnumerable<Store>>().ReverseMap();
+            config.CreateMap<StoreViewModel, Store>().ReverseMap();
         }
     }
 }

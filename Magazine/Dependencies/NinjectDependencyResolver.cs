@@ -33,17 +33,12 @@ namespace Magazine.Dependencies
             // unity of work binding
             _kernel.Bind<IUnityOfWork>().To<UnityOfWork>();
 
-            // repository binding
-            //TODO:
-
             // AutoMapperConfiguration binding
             _kernel.Bind<IMapper>().ToMethod(AutoMapperConfig.GetMapper).InSingletonScope();
 
-            // Identity
-            //TODO:
-
             // mappers binding
             _kernel.Bind<StoreMapper>().ToSelf().InSingletonScope();
+            _kernel.Bind<ItemMapper>().ToSelf().InSingletonScope();
 
         }
     }

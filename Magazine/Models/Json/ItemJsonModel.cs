@@ -1,6 +1,6 @@
-﻿namespace Magazine.Models
+﻿namespace Magazine.Models.Json
 {
-    public class ItemViewModel
+    public class ItemJsonModel
     {
         public string Name { get; set; }
         public string Description { get; set; }

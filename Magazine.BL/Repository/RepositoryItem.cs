@@ -3,13 +3,14 @@ using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Magazine.BL.Repository
 {
-    public class RepositoryItem : IRepository<Item>
+    public class RepositoryItem : IRepository<Item>, IRepositoryItem<Item>
     {
         private MagazineContext _db;
 
@@ -18,27 +19,32 @@ namespace Magazine.BL.Repository
             _db = context;
         }
 
-        public void Create()
+        public async Task<IEnumerable<Item>> GetByStoreIdAsync(int id)
+        {
+            return await _db.Items.Where(m => m.StoreId == id).ToListAsync();
+        }
+
+        public async Task<Item> GetAsync(int id)
+        {
+            return await _db.Items.FindAsync(id);
+        }
+
+        public Task<IEnumerable<Item>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public Task CreateAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Item Get(int id)
+        public Task UpdateAsync()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Item> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update()
+        public Task DeleteAsync()
         {
             throw new NotImplementedException();
         }

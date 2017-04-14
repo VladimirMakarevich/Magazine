@@ -18,7 +18,7 @@
         {
             var store = new List<Store>
             {
-                new Store { Name = "LughtPoint", Address = "220113, Belarus, Minsk city,  5-1 Melezha str., Apt. 306", StartWorkTime = "11.00 A.M.", EndWorkTime = "00.00 A.M." },
+                new Store { Name = "LightPoint", Address = "220113, Belarus, Minsk city,  5-1 Melezha str., Apt. 306", StartWorkTime = "11.00 A.M.", EndWorkTime = "00.00 A.M." },
                 new Store { Name = "EPAM", Address = "1/1 Academician Kuprevich Street, Suite 110, 220141 Minsk Belarus", StartWorkTime = "8.30 A.M.", EndWorkTime = "20.00 P.M." },
                 new Store { Name = "HTP", Address = "Kuprevicha, 1/1, 220141, Minsk, Belarus.", StartWorkTime = "9.30 A.M.", EndWorkTime = "22.30 P.M." },
                 new Store { Name = "Itransition", Address = "Street Kuĺman 1, Minsk 220013, Belarus", StartWorkTime = "10.00 A.M.", EndWorkTime = "21.00 P.M." },

@@ -3,6 +3,7 @@ using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,27 +19,27 @@ namespace Magazine.BL.Repository
             _db = context;
         }
 
-        public void Create()
+        public async Task<Store> GetAsync(int id)
+        {
+            return await _db.Stores.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<Store>> GetAllAsync()
+        {
+            return await _db.Stores.OrderBy(m => m.Id).ToListAsync();
+        }
+
+        public Task UpdateAsync()
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public Task CreateAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Store Get(int id)
-        {
-            return _db.Stores.Find(id);
-        }
-
-        public IEnumerable<Store> GetAll()
-        {
-            return _db.Stores.OrderBy(m => m.Id);
-        }
-
-        public void Update()
+        public Task DeleteAsync()
         {
             throw new NotImplementedException();
         }

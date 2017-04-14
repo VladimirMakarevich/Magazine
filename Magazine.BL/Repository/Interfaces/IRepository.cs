@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Magazine.BL.Repository.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
-        T Get(int id);
-        void Create();
-        void Update();
-        void Delete();
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetAsync(int id);
+        Task CreateAsync();
+        Task UpdateAsync();
+        Task DeleteAsync();
     }
 }

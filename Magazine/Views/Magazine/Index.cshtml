@@ -23,13 +23,14 @@
                 @foreach (var m in Model)
                 {
                     <tr>
+                        @Html.Hidden("Id", m.Id)
                         <td>
                             <strong>@m.Name</strong>
                         </td>
                         <td class="info">@m.Address</td>
                         <td>@m.StartWorkTime - @m.EndWorkTime</td>
                         <td>
-                            <a href="@Url.Action("GetListItem", "Magazine", new { id = m.Id })" class="btn btn-info btn-sm"> Items </a>
+                            <a href="@Url.Action("GetListItems", "Magazine", new { id = m.Id })" class="btn btn-info btn-sm"> Items </a>
                         </td>
                     </tr>
                 }

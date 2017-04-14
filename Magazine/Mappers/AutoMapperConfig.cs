@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
-using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
 using Magazine.Models;
+using Magazine.Models.Json;
 using Ninject.Activation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Magazine.Mappers
 {
@@ -22,6 +18,7 @@ namespace Magazine.Mappers
         private static void RegisterMappings(IMapperConfigurationExpression config)
         {
             config.CreateMap<StoreViewModel, Store>().ReverseMap();
+            config.CreateMap<ItemJsonModel, Item>().ReverseMap();
         }
     }
 }

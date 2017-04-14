@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using Magazine.DAL.Entities;
 using Magazine.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace Magazine.Mappers
 {
@@ -17,7 +15,7 @@ namespace Magazine.Mappers
             _mapper = mapper;
         }
 
-        public IEnumerable<StoreViewModel> ToListStoreViewModel(IEnumerable<Store> store)
+        public IEnumerable<StoreViewModel> ToStoreListViewModel(IEnumerable<Store> store)
         {
             var storeListViewModel = store.Select(ToStoreViewModel).ToList();
             return storeListViewModel;

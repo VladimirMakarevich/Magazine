@@ -23,6 +23,11 @@ namespace Magazine
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/get-list-items").Include(
+                      "~/Scripts/Custom/getItemByStore.js"));
+
+
+            // Styles
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

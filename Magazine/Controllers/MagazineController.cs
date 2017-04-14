@@ -1,4 +1,6 @@
 ﻿using Magazine.BL.UnityOfWork;
+using Magazine.DAL.Entities;
+using Magazine.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +11,18 @@ namespace Magazine.Controllers
 {
     public class MagazineController : BaseController
     {
-        public MagazineController(IUnityOfWork unityOfWork)
+        private StoreMapper _storeMapper;
+        public MagazineController(IUnityOfWork unityOfWork, StoreMapper storeMapper)
         {
             _unityOfWork = unityOfWork;
+            _storeMapper = storeMapper;
         }
 
         public ActionResult Index()
         {
-
-            return View();
+            var store = _unityOfWork.Stores.GetAll();
+            var storeViewModel = _storeMapper.ToStoreViewModel(store);
+            return View(storeViewModel);
         }
 
 

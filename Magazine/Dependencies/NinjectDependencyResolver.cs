@@ -1,4 +1,5 @@
 ﻿using Magazine.BL.UnityOfWork;
+using Magazine.Mappers;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -38,8 +39,8 @@ namespace Magazine.Dependencies
             //TODO:
 
             // mappers binding
-            //_kernel.Bind<Mapper>().ToSelf().InSingletonScope();
-            //TODO:
+            _kernel.Bind<StoreMapper>().ToSelf().InSingletonScope();
+
         }
     }
 }

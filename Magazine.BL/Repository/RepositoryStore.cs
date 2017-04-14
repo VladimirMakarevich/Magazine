@@ -30,12 +30,12 @@ namespace Magazine.BL.Repository
 
         public Store Get(int id)
         {
-            throw new NotImplementedException();
+            return _db.Stores.Find(id);
         }
 
         public IEnumerable<Store> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Stores.OrderBy(m => m.Id);
         }
 
         public void Update()

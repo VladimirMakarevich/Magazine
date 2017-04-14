@@ -1,13 +1,13 @@
-﻿using Magazine.DAL.Context;
+﻿using Magazine.BL.Repository.Interfaces;
+using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
-using Magazine.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magazine.DAL.Repository
+namespace Magazine.BL.Repository
 {
     public class RepositoryItem : IRepository<Item>
     {

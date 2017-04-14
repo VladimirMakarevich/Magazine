@@ -1,25 +1,31 @@
-﻿using Magazine.DAL.Context;
-using Magazine.DAL.Repository;
+﻿using Magazine.BL.Repository;
+using Magazine.DAL.Context;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Magazine.DAL.UnityOfWork
+namespace Magazine.BL.UnityOfWork
 {
-    public class UnityOfWork : IDisposable
+    public class UnityOfWork : IUnityOfWork, IDisposable
     {
-        private MagazineContext db = new MagazineContext();
+        private MagazineContext _db;
         private RepositoryItem _itemRepository;
         private RepositoryStore _storeRepository;
+
+        public UnityOfWork(MagazineContext db)
+        {
+            _db = db;
+        }
+
+        public UnityOfWork()
+        {
+            _db = new MagazineContext();
+        }
 
         public RepositoryItem Items
         {
             get
             {
                 if (_itemRepository == null)
-                    _itemRepository = new RepositoryItem(db);
+                    _itemRepository = new RepositoryItem(_db);
                 return _itemRepository;
             }
         }
@@ -29,14 +35,14 @@ namespace Magazine.DAL.UnityOfWork
             get
             {
                 if (_storeRepository == null)
-                    _storeRepository = new RepositoryStore(db);
+                    _storeRepository = new RepositoryStore(_db);
                 return _storeRepository;
             }
         }
 
         public void Save()
         {
-            db.SaveChanges();
+            _db.SaveChanges();
         }
 
         private bool disposed = false;
@@ -47,7 +53,7 @@ namespace Magazine.DAL.UnityOfWork
             {
                 if (disposing)
                 {
-                    db.Dispose();
+                    _db.Dispose();
                 }
                 this.disposed = true;
             }

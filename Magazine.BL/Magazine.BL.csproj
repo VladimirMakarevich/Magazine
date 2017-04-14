@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,10 +50,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\RepositoryItem.cs" />
+    <Compile Include="Repository\RepositoryStore.cs" />
+    <Compile Include="UnityOfWork\IUnityOfWork.cs" />
+    <Compile Include="UnityOfWork\UnityOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Providers\" />
+    <ProjectReference Include="..\Magazine.DAL\Magazine.DAL.csproj">
+      <Project>{261C0328-8122-43C4-B10F-3469F6F8FE97}</Project>
+      <Name>Magazine.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

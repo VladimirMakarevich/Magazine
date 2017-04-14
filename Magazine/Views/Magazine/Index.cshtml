@@ -5,14 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="container-fluid">
 
-<div>
-    @foreach (var item in Model)
-    {
-        <p>@item.Address</p>
-        <p>@item.StartWorkTime - @item.EndWorkTime</p>
-        <p>@item.Name</p>
-        <hr />
-    }
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                @ViewBag.Title
+                <small>@ViewBag.Subheading</small>
+            </h1>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="warning">Name</th>
+                    <th class="warning">Address</th>
+                    <th class="warning">Work time</th>
+                    <th class="warning">Details</th>
+                </tr>
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td>
+                            <strong>@m.Name</strong>
+                        </td>
+                        <td class="info">@m.Address</td>
+                        <td>@m.StartWorkTime - @m.EndWorkTime</td>
+                        <td>
+                            <a href="@Url.Action("GetListItem", "Magazine", new { id = m.Id })" class="btn btn-info btn-sm"> Items </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <a href="@Url.Action("Index", "Home")" class="btn btn-info btn-sm"> Back to home </a>
+        </div>
+    </div>
+
 </div>
-

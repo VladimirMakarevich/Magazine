@@ -5,13 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid">
-
+<div class="container-fluid items project">
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-8">
             <h1 class="page-header">
                 @ViewBag.Title
-                <small>@ViewBag.Subheading</small>
             </h1>
             <table class="table table-bordered">
                 <tr>
@@ -20,17 +18,17 @@
                     <th class="warning">Work time</th>
                     <th class="warning">Details</th>
                 </tr>
-                @foreach (var m in Model)
+                @foreach (var store in Model)
                 {
                     <tr>
-                        @Html.Hidden("Id", m.Id)
+                        @Html.Hidden("Id", store.Id)
                         <td>
-                            <strong>@m.Name</strong>
+                            <strong>@store.Name</strong>
                         </td>
-                        <td class="info">@m.Address</td>
-                        <td>@m.StartWorkTime - @m.EndWorkTime</td>
+                        <td class="info">@store.Address</td>
+                        <td>@store.StartWorkTime - @store.EndWorkTime</td>
                         <td>
-                            <a class="btn btn-info btn-sm" id="GetListItems"> Items </a>
+                            <a href="javascript: sentData(@store.Id)" class="btn btn-info btn-sm"> Items </a>
                         </td>
                     </tr>
                 }
@@ -40,19 +38,30 @@
                     <a href="@Url.Action("Index", "Home")" class="btn btn-info btn-sm"> Back to home </a>
                 </div>
 
-                <div class="row">
-                    <div class="col-xs-4">
-                        <p> Pagination </p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p> Pagination </p>
-                    </div>
-                </div>
+                @*<div class="row">
+                        <div class="col-xs-4">
+                            <p> Pagination </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p> Pagination </p>
+                        </div>
+                    </div>*@
             </div>
         </div>
-        <div class="col-xs-6">
-            <div id="result">
-
+        <div>
+            <div class="col-xs-4 hidden" id="itemTable">
+                <h1 class="page-header">
+                    Items
+                </h1>
+                <table class="table table-bordered items">
+                    <thead>
+                        <tr>
+                            <th class="warning">Name</th>
+                            <th class="warning">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>

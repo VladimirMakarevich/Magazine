@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Magazine.BL.UnityOfWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,16 +10,16 @@ namespace Magazine.Api.Controllers
 {
     public class MagazineController : ApiController
     {
-        //private IUnityOfWork _unityOfWork;
-        ////private StoreMapper _storeMapper;
-        ////private ItemMapper _itemMapper;
+        private IUnityOfWork _unityOfWork;
+        //private StoreMapper _storeMapper;
+        //private ItemMapper _itemMapper;
 
-        //public MagazineController(IUnityOfWork unityOfWork)
-        //{
-        //    _unityOfWork = unityOfWork;
-        //    //_storeMapper = storeMapper;
-        //    //_itemMapper = itemMapper;
-        //}
+        public MagazineController(IUnityOfWork unityOfWork)
+        {
+            _unityOfWork = unityOfWork;
+            //_storeMapper = storeMapper;
+            //_itemMapper = itemMapper;
+        }
         // GET: api/Magazine
         public IEnumerable<string> Get()
         {

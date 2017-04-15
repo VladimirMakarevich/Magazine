@@ -1,9 +1,11 @@
 ﻿using Magazine.BL.UnityOfWork;
+using Magazine.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Magazine.Api.Controllers
@@ -14,16 +16,22 @@ namespace Magazine.Api.Controllers
         //private StoreMapper _storeMapper;
         //private ItemMapper _itemMapper;
 
+        public MagazineController()
+        {
+        }
+
         public MagazineController(IUnityOfWork unityOfWork)
         {
             _unityOfWork = unityOfWork;
             //_storeMapper = storeMapper;
             //_itemMapper = itemMapper;
         }
+
         // GET: api/Magazine
-        public IEnumerable<string> Get()
+        public async Task<Store> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await _unityOfWork.Stores.GetAsync(2);
+            //return new string[] { "value1", "value2" };
         }
 
         // GET: api/Magazine/5

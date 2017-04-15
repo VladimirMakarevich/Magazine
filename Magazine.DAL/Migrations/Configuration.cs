@@ -30,14 +30,14 @@
             store.ForEach(s => context.Stores.Add(s));
             context.SaveChanges();
 
-            for (int j = 1; j <= store.Count; j++)
+            for (int j = 1; j <= store.Count; ++j)
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i <= 20; i++)
                 {
                     var item = new Item
                     {
-                        Name = $"Item{i}",
-                        Description = $"Description{i}",
+                        Name = $"Item{i} " + $"by {store[j - 1].Name}",
+                        Description = $"Description{i} " + $"by {store[j - 1].Name}",
                         StoreId = j
                     };
                     context.Items.Add(item);

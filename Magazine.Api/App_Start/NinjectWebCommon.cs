@@ -11,6 +11,9 @@ namespace Magazine.Api.App_Start
     using Ninject;
     using Ninject.Web.Common;
 
+    using System.Web.Http;
+    using Ninject.Web.WebApi;
+
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -36,6 +39,7 @@ namespace Magazine.Api.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch

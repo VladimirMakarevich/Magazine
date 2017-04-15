@@ -1,5 +1,6 @@
-﻿//using AutoMapper;
-//using Magazine.Mappers;
+﻿using AutoMapper;
+using Magazine.Mappers;
+using Magazine.Api.Mappers;
 using Magazine.BL.UnityOfWork;
 using Ninject;
 using System;
@@ -34,11 +35,11 @@ namespace Magazine.Api.Dependencies
             _kernel.Bind<IUnityOfWork>().To<UnityOfWork>();
 
             // AutoMapperConfiguration binding
-            //_kernel.Bind<IMapper>().ToMethod(AutoMapperConfig.GetMapper).InSingletonScope();
+            _kernel.Bind<IMapper>().ToMethod(AutoMapperConfig.GetMapper).InSingletonScope();
 
             // mappers binding
-            //_kernel.Bind<StoreMapper>().ToSelf().InSingletonScope();
-            //_kernel.Bind<ItemMapper>().ToSelf().InSingletonScope();
+            _kernel.Bind<StoreMapper>().ToSelf().InSingletonScope();
+            _kernel.Bind<ItemMapper>().ToSelf().InSingletonScope();
 
         }
     }

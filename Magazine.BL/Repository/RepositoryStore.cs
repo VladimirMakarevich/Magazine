@@ -28,20 +28,5 @@ namespace Magazine.BL.Repository
         {
             return await _db.Stores.OrderBy(m => m.Id).ToListAsync();
         }
-
-        public Task UpdateAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task CreateAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

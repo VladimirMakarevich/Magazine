@@ -7,8 +7,5 @@ namespace Magazine.BL.Repository.Interfaces
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetAsync(int id);
-        Task CreateAsync();
-        Task UpdateAsync();
-        Task DeleteAsync();
     }
 }

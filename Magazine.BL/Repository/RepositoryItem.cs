@@ -33,20 +33,5 @@ namespace Magazine.BL.Repository
         {
             throw new NotImplementedException();
         }
-
-        public Task CreateAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -1,11 +1,9 @@
 ﻿using Magazine.BL.Repository.Interfaces;
 using Magazine.DAL.Context;
 using Magazine.DAL.Entities;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Magazine.BL.Repository
@@ -29,9 +27,9 @@ namespace Magazine.BL.Repository
             return await _db.Items.FindAsync(id);
         }
 
-        public Task<IEnumerable<Item>> GetAllAsync()
+        public async Task<IEnumerable<Item>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _db.Items.OrderBy(m => m.Id).ToListAsync();
         }
     }
 }

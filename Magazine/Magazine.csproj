@@ -187,7 +187,6 @@
     <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Mappers\ItemMapper.cs" />
     <Compile Include="Mappers\StoreMapper.cs" />
-    <Compile Include="Models\ItemViewModel.cs" />
     <Compile Include="Models\Json\ItemJsonModel.cs" />
     <Compile Include="Models\StoreViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Paginate\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

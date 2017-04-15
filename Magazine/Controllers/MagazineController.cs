@@ -32,9 +32,9 @@ namespace Magazine.Controllers
         public async Task<JsonResult> GetListItems(int id)
         {
             var items = await _unityOfWork.Items.GetByStoreIdAsync(id);
-            var itemsListJsonVodel = _itemMapper.ToItemListJsonModel(items);
+            var itemsListJsonModel = _itemMapper.ToItemListJsonModel(items);
 
-            return Json(itemsListJsonVodel, JsonRequestBehavior.AllowGet);
+            return Json(itemsListJsonModel, JsonRequestBehavior.AllowGet);
         }
     }
 }

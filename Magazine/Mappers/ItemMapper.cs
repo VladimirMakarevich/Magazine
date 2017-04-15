@@ -18,6 +18,7 @@ namespace Magazine.Mappers
         public IEnumerable<ItemJsonModel> ToItemListJsonModel(IEnumerable<Item> item)
         {
             var itemListJsonModel = item.Select(ToItemJsonModel).ToList();
+
             return itemListJsonModel;
         }
 

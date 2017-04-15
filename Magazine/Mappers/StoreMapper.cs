@@ -18,6 +18,7 @@ namespace Magazine.Mappers
         public IEnumerable<StoreViewModel> ToStoreListViewModel(IEnumerable<Store> store)
         {
             var storeListViewModel = store.Select(ToStoreViewModel).ToList();
+
             return storeListViewModel;
         }
 

@@ -19,16 +19,16 @@ namespace Magazine.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var store = await _unityOfWork.Stores.GetAllAsync();
-            var storeListViewModel = _storeMapper.ToStoreListViewModel(store);
+            var storeList = await _unityOfWork.Stores.GetAllAsync();
+            var storeListViewModel = _storeMapper.ToStoreListViewModel(storeList);
 
             return View(storeListViewModel);
         }
 
         public async Task<JsonResult> GetListItems(int id)
         {
-            var items = await _unityOfWork.Items.GetByStoreIdAsync(id);
-            var itemsListJsonModel = _itemMapper.ToItemListJsonModel(items);
+            var itemsList = await _unityOfWork.Items.GetByStoreIdAsync(id);
+            var itemsListJsonModel = _itemMapper.ToItemListJsonModel(itemsList);
 
             return Json(itemsListJsonModel, JsonRequestBehavior.AllowGet);
         }

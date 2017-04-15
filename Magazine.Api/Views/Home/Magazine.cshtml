@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Magazine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-8">
+            <h1 class="page-header">
+                @ViewBag.Title
+            </h1>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="warning">Name</th>
+                    <th class="warning">Address</th>
+                    <th class="warning">Work time</th>
+                    <th class="warning">Details</th>
+                </tr>
+                <tr ng-repeat="store in Stores">
+                    <td>
+                        <strong> {{store.Name}} </strong>
+                    </td>
+                    <td class="info"> {{store.Address}} </td>
+                    <td> {{store.StartWorkTime}} - {{store.EndWorkTime}} </td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-sm"> Items </a>
+                    </td>
+                </tr>
+            </table>
+            <div class="row">
+                <div class="col-xs-2">
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-info btn-sm"> Back to home </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-xs-4">
+                <h1 class="page-header">
+                    Items
+                </h1>
+                <table class="table table-bordered items">
+                    <thead>
+                        <tr>
+                            <th class="warning">Name</th>
+                            <th class="warning">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

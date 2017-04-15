@@ -17,7 +17,7 @@ namespace Magazine.BL.Repository
             _db = context;
         }
 
-        public async Task<IEnumerable<Item>> GetByStoreIdAsync(int id)
+        public async Task<IEnumerable<Item>> GetStoresByIdAsync(int id)
         {
             return await _db.Items.Where(m => m.StoreId == id).ToListAsync();
         }

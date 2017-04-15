@@ -5,6 +5,6 @@ namespace Magazine.BL.Repository.Interfaces
 {
     public interface IRepositoryItem<T> where T : class
     {
-        Task<IEnumerable<T>> GetByStoreIdAsync(int id);
+        Task<IEnumerable<T>> GetStoresByIdAsync(int id);
     }
 }

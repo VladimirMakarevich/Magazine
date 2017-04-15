@@ -27,7 +27,7 @@ namespace Magazine.Controllers
 
         public async Task<JsonResult> GetListItems(int id)
         {
-            var itemsList = await _unityOfWork.Items.GetByStoreIdAsync(id);
+            var itemsList = await _unityOfWork.Items.GetStoresByIdAsync(id);
             var itemsListJsonModel = _itemMapper.ToItemListJsonModel(itemsList);
 
             return Json(itemsListJsonModel, JsonRequestBehavior.AllowGet);

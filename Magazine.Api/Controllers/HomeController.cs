@@ -10,5 +10,10 @@ namespace Magazine.Api.Controllers
 
             return View();
         }
+
+        public ActionResult Magazine()
+        {
+            return View();
+        }
     }
 }

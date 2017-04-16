@@ -4,7 +4,7 @@ using Magazine.Api.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Magazine.Mappers
+namespace Magazine.Api.Mappers
 {
     public class ItemMapper
     {

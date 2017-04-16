@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Magazine.BL.UnityOfWork;
-using Magazine.Mappers;
+using Magazine.Api.Mappers;
 using System.Threading.Tasks;
 using Magazine.Api.Models;
 

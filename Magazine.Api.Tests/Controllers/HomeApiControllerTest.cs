@@ -1,15 +1,15 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Magazine.Controllers;
+using Magazine.Api.Controllers;
 
-namespace Magazine.Tests.Controllers
+namespace Magazine.Api.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class HomeApiControllerTest
     {
         private readonly HomeController _controller;
 
-        public HomeControllerTest()
+        public HomeApiControllerTest()
         {
             _controller = new HomeController();
 
@@ -19,6 +19,15 @@ namespace Magazine.Tests.Controllers
         public void Index_IsNotNull()
         {
             var result = _controller.Index() as ViewResult;
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Vladimir Makarevich", result.ViewBag.Title);
+        }
+
+        [TestMethod]
+        public void Magazine_IsNotNull()
+        {
+            var result = _controller.Magazine() as ViewResult;
 
             Assert.IsNotNull(result);
         }

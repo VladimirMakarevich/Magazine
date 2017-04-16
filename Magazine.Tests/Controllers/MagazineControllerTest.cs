@@ -21,7 +21,6 @@ namespace Magazine.Tests.Controllers
             _controller = Kernel.Get<MagazineController>();
             NewScope();
             _unityOfWork = Kernel.Get<IUnityOfWork>();
-
         }
 
         [TestMethod]

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Magazine.Mappers;
 using Magazine.Api.Mappers;
 using Magazine.BL.UnityOfWork;
 using Ninject;

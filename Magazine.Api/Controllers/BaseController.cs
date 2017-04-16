@@ -1,5 +1,5 @@
 ﻿using Magazine.BL.UnityOfWork;
-using Magazine.Mappers;
+using Magazine.Api.Mappers;
 using System.Web.Http;
 
 namespace Magazine.Api.Controllers

@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Magazine.Api.Controllers;
-using Magazine.BL.UnityOfWork;
 using System.Threading.Tasks;
 using Ninject;
 using Magazine.Api.Tests.Ninject;

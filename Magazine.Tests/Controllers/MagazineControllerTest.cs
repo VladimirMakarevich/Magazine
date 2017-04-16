@@ -5,12 +5,12 @@ using Magazine.Controllers;
 namespace Magazine.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class MagazineController
     {
         [TestMethod]
         public void Index()
         {
-            HomeController controller = new HomeController();
+            MagazineController controller = new MagazineController();
 
             ViewResult result = controller.Index() as ViewResult;
 

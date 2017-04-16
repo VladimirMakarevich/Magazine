@@ -6,7 +6,7 @@ namespace Magazine.Api.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Vladimir Makarevich";
 
             return View();
         }

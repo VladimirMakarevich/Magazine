@@ -24,7 +24,7 @@
                     <td class="info"> {{store.Address}} </td>
                     <td> {{store.StartWorkTime}} - {{store.EndWorkTime}} </td>
                     <td>
-                        <a href="#" class="btn btn-info btn-sm"> Items </a>
+                        <button ng-click="items(store.Id)" ng-model="IsItemsList" class="btn btn-info btn-sm"> Items </button>
                     </td>
                 </tr>
             </table>
@@ -36,18 +36,19 @@
         </div>
 
         <div>
-            <div class="col-xs-4">
+            <div class="col-xs-4" ng-show="IsItemsList">
                 <h1 class="page-header">
                     Items
                 </h1>
                 <table class="table table-bordered items">
-                    <thead>
-                        <tr>
-                            <th class="warning">Name</th>
-                            <th class="warning">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
+                    <tr>
+                        <th class="warning">Name</th>
+                        <th class="warning">Description</th>
+                    </tr>
+                    <tr ng-repeat="it in item">
+                        <td> {{it.Name}} </td>
+                        <td class="info"> {{it.Description}} </td>
+                    </tr>
                 </table>
             </div>
         </div>

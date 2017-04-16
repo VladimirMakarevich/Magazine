@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magazine.Api", "Magazine.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magazine.Api.Tests", "Magazine.Api.Tests\Magazine.Api.Tests.csproj", "{6A94BE47-E4F8-4B6D-8CC3-EE1F2F5510A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLQuery", "SQLQuery", "{8D88095B-9787-457C-B5F1-0AE5CDCDEE61}"
+	ProjectSection(SolutionItems) = preProject
+		MagazineQuery.sql = MagazineQuery.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
